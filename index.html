@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HenryAI — Personal OpenClaw AI Concierge Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        h1 {
+            font-size: 48px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .tagline {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        
+        .hero {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .hero p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 16px;
+        }
+        
+        .features {
+            display: grid;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        
+        .feature {
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        
+        .feature p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .pricing {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        
+        .price-card {
+            background: white;
+            padding: 32px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .price-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+        }
+        
+        .price-card.featured {
+            border-color: #667eea;
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+        }
+        
+        .price-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        
+        .price {
+            font-size: 32px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 16px;
+        }
+        
+        .price-card ul {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+        
+        .price-card li {
+            padding: 8px 0;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .price-card li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+        }
+        
+        .process {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        .process h2 {
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .step {
+            text-align: center;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 12px;
+        }
+        
+        .step p {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        footer {
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 32px;
+            }
+            
+            .pricing {
+                grid-template-columns: 1fr;
+            }
+            
+            .steps {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚡ Henry</h1>
+            <p class="tagline">Set up your personal AI assistant. No tech skills required.</p>
+        </header>
+        
+        <div class="hero">
+            <p>
+                <strong>Want your own AI assistant running on OpenClaw?</strong> We'll walk you through everything from start to finish — from setup to your first completed task.
+            </p>
+            <p>
+                You'll have a personalized AI that works for you, with a guide of 20-50 prompts tailored to what you actually want to do.
+            </p>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>✓ Complete Setup</h3>
+                <p>We handle the entire installation process. No coding, no confusion.</p>
+            </div>
+            <div class="feature">
+                <h3>✓ First Task</h3>
+                <p>We walk you through completing your first real task with your AI.</p>
+            </div>
+            <div class="feature">
+                <h3>✓ Custom Guide</h3>
+                <p>Get a personalized prompt guide with 20-50 examples for your use case.</p>
+            </div>
+            <div class="feature">
+                <h3>✓ Your Own AI</h3>
+                <p>Runs on your machine. Your data stays with you. Full control.</p>
+            </div>
+        </div>
+        
+        <div class="pricing">
+            <div class="price-card">
+                <h3>Standard</h3>
+                <div class="price">$49</div>
+                <ul>
+                    <li>Complete OpenClaw setup</li>
+                    <li>Install one messaging channel</li>
+                    <li>Complete first task together</li>
+                    <li>20-prompt custom guide</li>
+                </ul>
+                <button class="cta-button">Get Started</button>
+            </div>
+            
+            <div class="price-card featured">
+                <h3>Pro</h3>
+                <div class="price">$149</div>
+                <ul>
+                    <li>Everything in Standard</li>
+                    <li>Connect two channels</li>
+                    <li>Troubleshooting training</li>
+                    <li>50-prompt custom guide</li>
+                    <li>7-day email support</li>
+                </ul>
+                <button class="cta-button">Get Started</button>
+            </div>
+        </div>
+        
+        <div class="process">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <p><strong>You choose</strong><br>your use case</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <p><strong>We set up</strong><br>your AI</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <p><strong>First win</strong><br>together</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <p><strong>You're ready</strong><br>to go</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2026 Henry AI. Built by humans and AI working together.</p>
+        </footer>
+    </div>
+</body>
+</html>
