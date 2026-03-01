@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome! Next Steps — HenryAI Concierge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .success-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .checkmark {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 36px;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 16px;
+            color: #667eea;
+        }
+        
+        .card p {
+            color: #555;
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 6px;
+            border: none;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+        }
+        
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .success-message {
+            background: #f0f8ff;
+            border-left: 4px solid #667eea;
+            padding: 16px;
+            border-radius: 6px;
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        .timeline {
+            margin-top: 24px;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 16px;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            background: #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        
+        .timeline-item:nth-child(1):before {
+            content: "1";
+        }
+        
+        .timeline-item:nth-child(2):before {
+            content: "2";
+        }
+        
+        .timeline-item:nth-child(3):before {
+            content: "3";
+        }
+        
+        .timeline-item p {
+            margin: 0;
+            color: #555;
+        }
+        
+        .highlight {
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .faq {
+            background: #f5f5f5;
+            padding: 24px;
+            border-radius: 8px;
+            margin-top: 24px;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .faq-q {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        
+        .faq-a {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .contact-info {
+            background: #fff5f0;
+            padding: 16px;
+            border-radius: 6px;
+            margin-top: 16px;
+            text-align: center;
+        }
+        
+        .contact-info p {
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-header">
+            <div class="checkmark">✓</div>
+            <h1>Welcome!</h1>
+            <p class="subtitle">Your payment is confirmed. Let's get you set up.</p>
+        </div>
+        
+        <div class="card">
+            <h2>Next Step: Tell Us How to Reach You</h2>
+            <p>I'll contact you via Telegram to get started. Just tell me your Telegram username below, and I'll send you the intake form.</p>
+            
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="telegram">Your Telegram Username</label>
+                    <input 
+                        type="text" 
+                        id="telegram" 
+                        name="telegram" 
+                        placeholder="@yourusername"
+                        required
+                    >
+                    <p style="font-size: 12px; color: #999; margin-top: 6px;">Don't have Telegram? You can <a href="https://telegram.org" target="_blank" style="color: #667eea;">download it here</a> (free, takes 2 minutes).</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Your Email (backup)</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="your@email.com"
+                        required
+                    >
+                </div>
+                
+                <button type="submit" class="submit-btn">Let's Get Started</button>
+                
+                <div class="success-message" id="successMessage">
+                    <p><strong>Got it!</strong> I'll be in touch on Telegram soon. Check your messages!</p>
+                </div>
+            </form>
+        </div>
+        
+        <div class="card">
+            <h2>What Happens Next</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <p><span class="highlight">You submit your contact info</span> (this form)</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="highlight">I message you on Telegram</span> with a quick intake form (5 questions about your setup)</p>
+                </div>
+                <div class="timeline-item">
+                    <p><span class="highlight">We schedule your session</span> and walk through setup together</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>FAQ</h2>
+            <div class="faq">
+                <div class="faq-item">
+                    <div class="faq-q">How long does setup take?</div>
+                    <div class="faq-a">Usually 45 minutes to 1 hour. I'll guide you through every step.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Do I need to know how to code?</div>
+                    <div class="faq-a">No. This is designed for non-technical people. Zero coding required.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">What if I'm not happy?</div>
+                    <div class="faq-a">Full 60-day money-back guarantee. No questions asked.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Don't have Telegram?</div>
+                    <div class="faq-a">Download it free at telegram.org. It takes 2 minutes to set up.</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-info">
+            <p>Questions? Reach out at <a href="mailto:henryaimind@gmail.com">henryaimind@gmail.com</a></p>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const telegram = document.getElementById('telegram').value;
+            const email = document.getElementById('email').value;
+            
+            // Log to console for now (we'll wire this to a backend later)
+            console.log('Contact info submitted:', { telegram, email });
+            
+            // Show success message
+            document.getElementById('successMessage').classList.add('show');
+            
+            // Disable form
+            document.querySelector('.submit-btn').disabled = true;
+            document.querySelector('.submit-btn').textContent = 'Thanks! I\'ll reach out soon.';
+            
+            // TODO: Send to webhook/backend to store in database
+            // For now, this just confirms to the user
+        });
+    </script>
+</body>
+</html>
